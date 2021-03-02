@@ -21,7 +21,7 @@ public class CurrentAccount extends BankAccount {
 
 	@Override
 	public void withdraw(Double amount) throws InsufficientFundsExceptions {
-		if(amount < this.balance) {
+		if(amount > this.balance) {
 			throw new InsufficientFundsExceptions(
 					"You don't have the required amount");
 		}
