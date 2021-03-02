@@ -38,7 +38,7 @@ public class CurrentAccount extends BankAccount {
 		}
 		this.withdraw(amount);
 		destination.deposit(amount);
-		
+		//
 	}
 
 
