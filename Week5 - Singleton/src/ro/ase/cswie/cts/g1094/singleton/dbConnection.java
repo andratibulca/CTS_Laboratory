@@ -21,23 +21,25 @@ public class dbConnection {
 		this.schema = schema;
 	}
 	
-	
+	//lazy-instantiation of the unique object
 	 public static dbConnection getConnection() {
 		 if(dbConnection.connection == null) {
 			 connection = new dbConnection();
 		 }
 		 return dbConnection.connection;
 	 }
+	 
+	 
 	//it's not clean
 	//it's misleading - others will think they have multiple connections
-	//public static dbConnection getConnection(String connString, String schema) {
-		//if(dbConnection.connection == null) 
-		//{
+	public static dbConnection getConnection(String connString, String schema) {
+		if(dbConnection.connection == null) 
+		{
 			//we create the object
-			///connection = new dbConnection(connString, schema);
-		//}
-		//return dbConnection.connection;
-	//}
+			connection = new dbConnection(connString, schema);
+		}
+		return dbConnection.connection;
+	}
 	
 
 }

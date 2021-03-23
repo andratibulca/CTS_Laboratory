@@ -8,3 +8,7 @@ database
  multiple objects associated with the database connection
 - the client must use an unique object to take care of the
  connection to the database
+
+ 2.The app will use different databeses for development and production.
+ The connections to those db's must be unique without the overhead of creating multiple 
+ singleton classes
