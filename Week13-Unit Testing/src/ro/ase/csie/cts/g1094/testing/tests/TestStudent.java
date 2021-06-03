@@ -10,11 +10,14 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 
 import ro.ase.csie.cts.g1094.testing.exceptions.WrongAgeException;
 import ro.ase.csie.cts.g1094.testing.exceptions.WrongGradesException;
 import ro.ase.csie.cts.g1094.testing.exceptions.WrongNameException;
 import ro.ase.csie.cts.g1094.testing.models.Student;
+import ro.ase.csie.cts.g1094.testing.tests.categories.ImportantTest;
+import ro.ase.csie.cts.g1094.testing.tests.categories.PerformanceTest;
 
 public class TestStudent {
 	
@@ -116,6 +119,7 @@ public class TestStudent {
 		assertEquals("Testing with an empty set of grades", expectedAverage, computedAverage, 0);
 	}
 	
+	@Category({ImportantTest.class, PerformanceTest.class})
 	@Test
 	public void testGetGradesAverageCardinalityOne() throws WrongGradesException {
 		ArrayList<Integer> grades = new ArrayList<>();
